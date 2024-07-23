@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package sistema.de.reservas.para.un.restaurante;
+package sistemaDeReservasParaUnRestaurante;
 
 /**
  *
