@@ -11,14 +11,14 @@ package sistemaDeReservasParaUnRestaurante;
  * @author César
  */
 public class ReservaMesa {
-    protected String idDeReserva;
-    protected String nombreDelCliente;
+    protected String[] idDeReserva;
+    protected String[] nombreDelCliente;
     protected int numeroDePersonas;
     protected int fechaDeLaReserva;
     protected int horaDeLaReserva;
     protected boolean estado;
-    public ReservaMesa(String idDeReserva,String nombreDelCliente,int numeroDePersonas,
-    int fechaDeLaReserva,int horaDeLaReserva,boolean estado){
+    public ReservaMesa(String[] idDeReserva,String[] nombreDelCliente,int 
+      numeroDePersonas,int fechaDeLaReserva,int horaDeLaReserva,boolean estado){
     this.numeroDePersonas=numeroDePersonas;
     this.idDeReserva=idDeReserva;
     this.nombreDelCliente=nombreDelCliente;
@@ -28,19 +28,23 @@ public class ReservaMesa {
     
     }
 
-    public String getIdDeReserva() {
+    ReservaMesa() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String[] getIdDeReserva() {
         return idDeReserva;
     }
 
-    public void setIdDeReserva(String idDeReserva) {
+    public void setIdDeReserva(String[] idDeReserva) {
         this.idDeReserva = idDeReserva;
     }
 
-    public String getNombreDelCliente() {
+    public String[] getNombreDelCliente() {
         return nombreDelCliente;
     }
 
-    public void setNombreDelCliente(String nombreDelCliente) {
+    public void setNombreDelCliente(String[] nombreDelCliente) {
         this.nombreDelCliente = nombreDelCliente;
     }
 

@@ -20,8 +20,12 @@ public class FuncionesReservas {
     public void setReservas(ArrayList<ReservaMesa> reservas) {
         this.reservas = reservas;
     }
- 
-   }
-
-    
-
+ private ReservaMesa buscarReserva (String[] id){
+     ReservaMesa buscar = null;
+     for (ReservaMesa y : reservas){
+        if (y.getIdDeReserva() == id)
+           buscar = y; 
+        }
+ return buscar;
+    }
+}
