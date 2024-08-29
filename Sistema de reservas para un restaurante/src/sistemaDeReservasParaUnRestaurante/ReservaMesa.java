@@ -11,40 +11,34 @@ package sistemaDeReservasParaUnRestaurante;
  * @author César
  */
 public class ReservaMesa {
-    protected String[] idDeReserva;
-    protected String[] nombreDelCliente;
-    protected int numeroDePersonas;
-    protected int fechaDeLaReserva;
-    protected int horaDeLaReserva;
-    protected boolean estado;
-    public ReservaMesa(String[] idDeReserva,String[] nombreDelCliente,int 
-      numeroDePersonas,int fechaDeLaReserva,int horaDeLaReserva,boolean estado){
-    this.numeroDePersonas=numeroDePersonas;
+    private String idDeReserva;
+    private String nombreDelCliente;
+    private int numeroDePersonas;
+    private String fechaDeLaReserva;
+    private String horaDeLaReserva;
+    private boolean estado;
+    public ReservaMesa(String idDeReserva,String nombreDelCliente,int 
+      numeroDePersonas,String fechaDeLaReserva,String horaDeLaReserva){
     this.idDeReserva=idDeReserva;
     this.nombreDelCliente=nombreDelCliente;
-    this.estado=estado;
+    this.numeroDePersonas=numeroDePersonas;
     this.fechaDeLaReserva=fechaDeLaReserva;
     this.horaDeLaReserva=horaDeLaReserva;
-    
-    }
-
-    ReservaMesa() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public String[] getIdDeReserva() {
+    this.estado=false;
+    }    
+    public String getIdDeReserva() {
         return idDeReserva;
     }
 
-    public void setIdDeReserva(String[] idDeReserva) {
+    public void setIdDeReserva(String idDeReserva) {
         this.idDeReserva = idDeReserva;
     }
 
-    public String[] getNombreDelCliente() {
+    public String getNombreDelCliente() {
         return nombreDelCliente;
     }
 
-    public void setNombreDelCliente(String[] nombreDelCliente) {
+    public void setNombreDelCliente(String nombreDelCliente) {
         this.nombreDelCliente = nombreDelCliente;
     }
 
@@ -56,19 +50,19 @@ public class ReservaMesa {
         this.numeroDePersonas = numeroDePersonas;
     }
 
-    public int getFechaDeLaReserva() {
+    public String getFechaDeLaReserva() {
         return fechaDeLaReserva;
     }
 
-    public void setFechaDeLaReserva(int fechaDeLaReserva) {
+    public void setFechaDeLaReserva(String fechaDeLaReserva) {
         this.fechaDeLaReserva = fechaDeLaReserva;
     }
 
-    public int getHoraDeLaReserva() {
+    public String getHoraDeLaReserva() {
         return horaDeLaReserva;
     }
 
-    public void setHoraDeLaReserva(int horaDeLaReserva) {
+    public void setHoraDeLaReserva(String horaDeLaReserva) {
         this.horaDeLaReserva = horaDeLaReserva;
     }
 
@@ -79,4 +73,5 @@ public class ReservaMesa {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
+
 }
