@@ -11,6 +11,8 @@ package sistemaDeReservasParaUnRestaurante;
  * @author César
  */
 public class ReservaMesa {
+
+    
     private String idDeReserva;
     private String nombreDelCliente;
     private int numeroDePersonas;
