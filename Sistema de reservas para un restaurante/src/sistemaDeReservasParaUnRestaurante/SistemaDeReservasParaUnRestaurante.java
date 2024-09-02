@@ -5,8 +5,7 @@
  */
 
 package sistemaDeReservasParaUnRestaurante;
-import java.util.ArrayList;
-import java.util.Scanner;
+
 /**
  *
  * @author César
