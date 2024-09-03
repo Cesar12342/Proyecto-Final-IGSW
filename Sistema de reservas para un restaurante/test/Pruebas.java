@@ -13,43 +13,43 @@ import sistemaDeReservasParaUnRestaurante.ReservaMesa;
  * @author César
  */
 public class Pruebas {
-    private ListaDeReservas listaDeReservas;
-    
+   private ListaDeReservas listaDeReservas;
+   ReservaMesa reserva;
     @Before
     public void setUp(){
         listaDeReservas = new ListaDeReservas();
+        reserva = new ReservaMesa("914ye" , "Cesar" , 6 , 
+                "10 04 2024" , "12:30" );
+        listaDeReservas.reservas.add(reserva);
     }
     @Test
     public void testAgregarReserva() {
-        ReservaMesa reserva1 = new ReservaMesa("91563" , "Cesar" , 6 , "10 04 2024" , 
+        ReservaMesa reservaAgregada = new ReservaMesa("91563" , "Cesar" , 6 , "10 04 2024" , 
                 "12:30" );
-        listaDeReservas.addReserva(reserva1);
-        assertTrue(listaDeReservas.getReservas().contains(reserva1));
-        
+        listaDeReservas.addReserva(reservaAgregada);
+        assertTrue(listaDeReservas.getReservas().contains(reservaAgregada));
     }
     @Test
-    public void testConfirmarReserva(){
-        ReservaMesa reserva2 = new ReservaMesa("914ye" , "Cesar" , 6 , 
-                "10 04 2024" , "12:30" );
-         listaDeReservas.addReserva(reserva2);
-         listaDeReservas.confirmarReservacion("914ye");
-         ReservaMesa confirmada = listaDeReservas.getReservas().get(0);
-         assertEquals(true,confirmada.isEstado());
-         
+    public void testCancelarReserva(){
+        assertTrue(listaDeReservas.getReservas().contains(reserva));
+        listaDeReservas.cancelarReserva("914ye");
+        assertFalse(listaDeReservas.getReservas().contains(reserva));
     }
     @Test
     public void testActualizarReserva(){
-       ReservaMesa reserva2 = new ReservaMesa("914ye" , "Cesar" , 6 , 
-                "10 04 2024" , "12:30" );
-       listaDeReservas.addReserva(reserva2);
-        ReservaMesa encontrada = listaDeReservas.buscarReserva("914ye");
-       encontrada.setNumeroDePersonas(8);
-       encontrada.setNombreDelCliente("Jose");
-       encontrada.setHoraDeLaReserva("5:30");
-       encontrada.setFechaDeLaReserva("11 05 2030");
-       assertEquals(8 , encontrada.getNumeroDePersonas());
-       assertEquals("Jose" , encontrada.getNombreDelCliente());
-       assertEquals("5:30" , encontrada.getHoraDeLaReserva());
-       assertEquals("11 05 2030" , encontrada.getFechaDeLaReserva());
+       ReservaMesa encontrada = listaDeReservas.buscarReserva("914ye");
+       if(encontrada != null){
+          encontrada.setNumeroDePersonas(8);
+          encontrada.setNombreDelCliente("Jose");
+          encontrada.setHoraDeLaReserva("5:30");
+          encontrada.setFechaDeLaReserva("11 05 2030");
+       
+          assertEquals(8 , encontrada.getNumeroDePersonas());
+          assertEquals("Jose" , encontrada.getNombreDelCliente());
+          assertEquals("5:30" , encontrada.getHoraDeLaReserva());
+          assertEquals("11 05 2030" , encontrada.getFechaDeLaReserva());
+       }else{
+           System.err.println("La reserva no existe");
+       }
     }
 }

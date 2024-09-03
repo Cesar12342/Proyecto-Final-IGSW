@@ -28,14 +28,11 @@ public class ListaDeReservas {
     }
 
     public ReservaMesa buscarReserva(String id) {
-        System.out.println("id resivido" + id);
-
         for (ReservaMesa y : reservas) {
             if (y.getIdDeReserva().equals(id)) {
                 return y;
             }
         }
-        System.out.println("respusta final-1");
         return null;
     }
     
