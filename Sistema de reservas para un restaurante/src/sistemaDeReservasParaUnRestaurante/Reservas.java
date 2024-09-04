@@ -6,6 +6,10 @@
 
 package sistemaDeReservasParaUnRestaurante;
 
+import javax.swing.JOptionPane;
+
+
+
 /**
  *
  * @author Oficina
@@ -45,7 +49,7 @@ public class Reservas extends javax.swing.JDialog {
         jTextField5 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -87,7 +91,7 @@ public class Reservas extends javax.swing.JDialog {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Estado:");
 
-        jTextField6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pendiente,", "Confirmada," }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -115,7 +119,7 @@ public class Reservas extends javax.swing.JDialog {
                             .addComponent(jTextField3)
                             .addComponent(jTextField4)
                             .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
-                            .addComponent(jTextField6))))
+                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(138, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -148,7 +152,7 @@ public class Reservas extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(67, 67, 67)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(65, 65, 65))
@@ -177,22 +181,22 @@ public class Reservas extends javax.swing.JDialog {
             int numeroDePersonas = Integer.parseInt(jTextField3.getText());
             String fechaDeLaReserva = jTextField4.getText();
             String horaDeLaReserva = jTextField5.getText();
-            
+           String estado = String.valueOf(jComboBox1.getSelectedItem());
             ReservaMesa reserva = new ReservaMesa(idDeReserva, nombreDelCliente, numeroDePersonas,
-                fechaDeLaReserva, horaDeLaReserva);
-           System.out.println(reserva.isEstado());
+                fechaDeLaReserva, horaDeLaReserva,estado);
+           
             listaDeReservas.addReserva(reserva);
             clear();
             
         }
-
+        System.out.println();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
     private boolean checkComponent(){
         if(jTextField1.getText().equals("")||jTextField2.getText().equals("")
                 ||jTextField3.getText().equals("")||jTextField4.getText().equals("")
                 ||jTextField5.getText().equals("")) 
-            return false;    
+            return false;
         return true;
     }
     private void clear(){
@@ -201,6 +205,8 @@ public class Reservas extends javax.swing.JDialog {
         jTextField3.setText("");
         jTextField4.setText("");
         jTextField5.setText("");
+        jComboBox1.setSelectedItem("");
+        
     }
     /**
      * @param args the command line arguments
@@ -246,6 +252,7 @@ public class Reservas extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -258,6 +265,5 @@ public class Reservas extends javax.swing.JDialog {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }

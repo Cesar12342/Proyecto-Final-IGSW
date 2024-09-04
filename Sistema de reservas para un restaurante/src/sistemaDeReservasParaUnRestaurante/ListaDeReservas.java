@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class ListaDeReservas {
 
-    public ArrayList<ReservaMesa> reservas = new ArrayList<>();
+    private ArrayList<ReservaMesa> reservas = new ArrayList<>();
 
     public ArrayList<ReservaMesa> getReservas() {
         return reservas;
@@ -47,11 +47,8 @@ public class ListaDeReservas {
     }
 }
 
-    public void confirmarReservacion(String id) {
-    ReservaMesa reserva = buscarReserva(id);
-    if (reserva != null) {
-        reserva.setEstado(true);
+    
     }
-}
 
-}
+
+
