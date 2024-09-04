@@ -6,6 +6,8 @@
 
 package sistemaDeReservasParaUnRestaurante;
 
+
+
 /**
  *
  * @author César
@@ -18,16 +20,26 @@ public class ReservaMesa {
     private int numeroDePersonas;
     private String fechaDeLaReserva;
     private String horaDeLaReserva;
-    private boolean estado;
+    private String estado;
+    
     public ReservaMesa(String idDeReserva,String nombreDelCliente,int 
-      numeroDePersonas,String fechaDeLaReserva,String horaDeLaReserva){
-    this.idDeReserva=idDeReserva;
-    this.nombreDelCliente=nombreDelCliente;
-    this.numeroDePersonas=numeroDePersonas;
-    this.fechaDeLaReserva=fechaDeLaReserva;
-    this.horaDeLaReserva=horaDeLaReserva;
-    this.estado=false;
+      numeroDePersonas,String fechaDeLaReserva,String horaDeLaReserva, String estado){
+        this.idDeReserva=idDeReserva;
+        this.nombreDelCliente=nombreDelCliente;
+        this.numeroDePersonas=numeroDePersonas;
+        this.fechaDeLaReserva=fechaDeLaReserva;
+        this.horaDeLaReserva=horaDeLaReserva;
+        this.estado=estado;
     }    
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     public String getIdDeReserva() {
         return idDeReserva;
     }
@@ -68,12 +80,6 @@ public class ReservaMesa {
         this.horaDeLaReserva = horaDeLaReserva;
     }
 
-    public boolean isEstado() {
-        return estado;
+    
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
-
-}
