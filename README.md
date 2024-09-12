@@ -1,5 +1,5 @@
 # Sistema_de_Reservas_para_un_Restaurante
-![th](https://github.com/user-attachments/assets/1689d726-1722-4521-855a-b360f4b3782f)
+https://foodandpleasure.com/restaurantes-para-cenar-en-la-cdmx/
 ___
 ### *Descripcion*:
 A continuación se muestran los pasos que seguimos a la hora de diseñar nuestro programa:
