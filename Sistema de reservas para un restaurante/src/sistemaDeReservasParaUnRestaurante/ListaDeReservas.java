@@ -23,8 +23,8 @@ public class ListaDeReservas {
         this.reservas = reservas;
     }
 
-    public void addReserva(ReservaMesa a) {
-        reservas.add(a);
+    public void addReserva(ReservaMesa agregar) {
+        reservas.add(agregar);
     }
 
     public ReservaMesa buscarReserva(String id) {

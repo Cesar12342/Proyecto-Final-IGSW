@@ -187,17 +187,20 @@ public class Reservas extends javax.swing.JDialog {
            
             listaDeReservas.addReserva(reserva);
             clear();
-            
+            JOptionPane.showMessageDialog(rootPane,"Reserva guardada satisfactoriamente");
         }
-        System.out.println();
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
     private boolean checkComponent(){
         if(jTextField1.getText().equals("")||jTextField2.getText().equals("")
                 ||jTextField3.getText().equals("")||jTextField4.getText().equals("")
-                ||jTextField5.getText().equals("")) 
+                ||jTextField5.getText().equals("")){ 
+            JOptionPane.showMessageDialog(rootPane,"Entre todos los datos");
             return false;
+        }    
         return true;
+        
     }
     private void clear(){
         jTextField1.setText("");

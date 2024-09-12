@@ -228,9 +228,11 @@ public class Actualizar extends javax.swing.JDialog {
          jTextField4.setText(reservaEncontrada.getFechaDeLaReserva());
          jTextField5.setText(reservaEncontrada.getHoraDeLaReserva());
          jComboBox1.setSelectedItem(reservaEncontrada.getEstado());
-             System.out.println("el estado es "+ reservaEncontrada.getEstado());
+          
+         }else{
+             JOptionPane.showMessageDialog(rootPane,"Reserva no encontrada");
          }
-         listaDeReservas.cancelarReserva(idDeReserva);
+         
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -243,7 +245,9 @@ public class Actualizar extends javax.swing.JDialog {
             String estado = String.valueOf(jComboBox1.getSelectedItem());
             ReservaMesa reserva = new ReservaMesa(idDeReserva, nombreDelCliente, numeroDePersonas,
                 fechaDeLaReserva, horaDeLaReserva,estado);
+            listaDeReservas.cancelarReserva(idDeReserva);
             listaDeReservas.addReserva(reserva);
+            JOptionPane.showMessageDialog(rootPane,"Reserva actualizada satisfactoriamente");
             clear();
             
         // TODO add your handling code here:
@@ -252,8 +256,10 @@ public class Actualizar extends javax.swing.JDialog {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         String idDeReserva = jTextField1.getText();
          ReservaMesa reservaEncontrada = listaDeReservas.buscarReserva(idDeReserva);
-          if(reservaEncontrada != null)
+          if(reservaEncontrada != null){
               listaDeReservas.cancelarReserva(idDeReserva);
+              JOptionPane.showMessageDialog(rootPane,"La reserva ha sido cancelada");
+          }
           clear();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
